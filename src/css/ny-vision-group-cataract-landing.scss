@@ -1,7 +1,8 @@
-/* placeholder classes */
-/* Wordpress Default Align */
-/* Transitional placeholder class */
-/* Box Shadows */
+// MAIN CSS
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/placeholders";
+
 body {
   height: 100%;
   font-family: Roboto, sans-serif;
@@ -13,7 +14,7 @@ body {
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: rgba(2, 18, 31, 0.76);
+  background-color: rgba(2, 18, 31, .76);
 }
 
 .logo {
@@ -54,8 +55,8 @@ body {
 
 .hero_section {
   height: 100%;
-  background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), #fff), url("../images/main-img.jpg");
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), #fff), url("../images/main-img.jpg");
+  background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
+  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -121,8 +122,8 @@ body {
 .section.bg {
   padding-top: 150px;
   padding-bottom: 150px;
-  background-image: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.77), rgba(255, 255, 255, 0.77)), url("../images/ny-bg.jpg");
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.77), rgba(255, 255, 255, 0.77)), url("../images/ny-bg.jpg");
+  background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
   background-position: 0px 0px, 50% 100%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -132,8 +133,8 @@ body {
 .section.lasik_test {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.79)), url("../images/ny-bg.jpg");
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.79)), url("../images/ny-bg.jpg");
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
   background-position: 0px 0px, 50% 100%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -150,7 +151,7 @@ body {
 
 .section.green {
   background-color: transparent;
-  background-image: url("../images/lens-bg.jpg");
+  background-image: url('../images/lens-bg.jpg');
   background-position: 50% 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -219,7 +220,7 @@ body {
   margin-top: 0px;
   margin-bottom: 40px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(164, 235, 14, 0.42);
+  border-bottom: 1px solid rgba(164, 235, 14, .42);
   color: #fff;
   font-weight: 300;
   text-align: left;
@@ -227,13 +228,13 @@ body {
 
 .section_headline.testimonials {
   padding-left: 0px;
-  border-bottom-color: rgba(28, 117, 187, 0.34);
+  border-bottom-color: rgba(28, 117, 187, .34);
   color: #000;
   font-weight: 700;
 }
 
 .section_headline.black {
-  border-bottom-color: rgba(28, 117, 187, 0.33);
+  border-bottom-color: rgba(28, 117, 187, .33);
   color: #000;
 }
 
@@ -302,8 +303,8 @@ body {
 }
 
 .lens_img_div.middle {
-  border-right: 1px dotted rgba(28, 117, 187, 0.4);
-  border-left: 1px dotted rgba(28, 117, 187, 0.4);
+  border-right: 1px dotted rgba(28, 117, 187, .4);
+  border-left: 1px dotted rgba(28, 117, 187, .4);
 }
 
 .buttons_div {
@@ -569,18 +570,17 @@ body {
   background-color: #fff;
 }
 
-@media (max-width: 991px) and (max-width: 991px) {
-  background-color: transparent;
-}
-
 @media (max-width: 991px) {
+  @include tablet {
+    background-color: transparent;
+  }
   .logo {
     left: 20px;
     top: -30px;
     width: 25%;
   }
   .hero_section {
-    background-image: url("../images/main-img.jpg");
+    background-image: url('../images/main-img.jpg');
     background-position: 13% 0px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -599,7 +599,7 @@ body {
     padding: 45px 25px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    background-color: rgba(255, 255, 255, 0.81);
+    background-color: hsla(0, 0%, 100%, .81);
     text-align: center;
   }
   .main_tagline {
@@ -732,9 +732,9 @@ body {
   .lens_img_div.middle {
     border-style: dotted none;
     border-top-width: 1px;
-    border-top-color: rgba(28, 117, 187, 0.4);
+    border-top-color: rgba(28, 117, 187, .4);
     border-bottom-width: 1px;
-    border-bottom-color: rgba(28, 117, 187, 0.4);
+    border-bottom-color: rgba(28, 117, 187, .4);
   }
   .lasik_test_img_div {
     display: none;
@@ -759,7 +759,7 @@ body {
     width: 35%;
   }
   .hero_section {
-    background-image: url("../images/main-img.jpg");
+    background-image: url('../images/main-img.jpg');
     background-position: 15% 0px;
     background-size: cover;
     background-repeat: no-repeat;
