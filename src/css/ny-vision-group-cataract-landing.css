@@ -1,0 +1,839 @@
+body {
+  height: 100%;
+  font-family: Roboto, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(2, 18, 31, .76);
+}
+
+.logo {
+  position: absolute;
+  left: 30px;
+  top: -40px;
+  width: 15%;
+}
+
+.logo.bottom {
+  position: static;
+  display: inline-block;
+  width: 10%;
+  margin-bottom: 30px;
+  float: none;
+}
+
+.navlink {
+  margin-right: 2px;
+  margin-left: 2px;
+  padding: 10px 15px;
+  border: 2px none #023c69;
+  border-radius: 0px;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navlink:hover {
+  border-color: #00ba27;
+  background-color: transparent;
+  color: #17fa47;
+}
+
+.navlink.w--current {
+  color: #a1fab4;
+}
+
+.hero_section {
+  height: 100%;
+  background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
+  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+}
+
+.nav_menu {
+  margin-top: 20px;
+  padding-top: 0px;
+  padding-right: 20px;
+}
+
+.main_tagline_div {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  width: 45%;
+  margin-top: 0px;
+  padding: 0px 100px 50px 0px;
+  background-color: transparent;
+  text-align: right;
+}
+
+.main_tagline {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: #023055;
+  font-size: 78px;
+  line-height: 78px;
+  font-weight: 900;
+}
+
+.main_tagline_smaller {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: #056ec0;
+  font-size: 30px;
+  line-height: 36px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.main_link {
+  color: #1c75bb;
+  line-height: 34px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.main_link:hover {
+  color: #00ba27;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section.lasik {
+  background-color: #02310c;
+}
+
+.section.bg {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
+  background-position: 0px 0px, 50% 100%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, fixed;
+}
+
+.section.lasik_test {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
+  background-position: 0px 0px, 50% 100%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, fixed;
+}
+
+.section.locations {
+  background-color: #000;
+}
+
+.section.footer {
+  padding-top: 50px;
+}
+
+.section.green {
+  background-color: transparent;
+  background-image: url('../images/lens-bg.jpg');
+  background-position: 50% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container_div {
+  display: block;
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.container_div.testimonials {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-radius: 45px;
+  background-color: transparent;
+}
+
+.container_div.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.container_div.test_form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.section_headline {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(164, 235, 14, .42);
+  color: #fff;
+  font-weight: 300;
+  text-align: left;
+}
+
+.section_headline.testimonials {
+  padding-left: 0px;
+  border-bottom-color: rgba(28, 117, 187, .34);
+  color: #000;
+  font-weight: 700;
+}
+
+.section_headline.black {
+  border-bottom-color: rgba(28, 117, 187, .33);
+  color: #000;
+}
+
+.section_headline.center {
+  text-align: center;
+}
+
+.text {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.text.white {
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 300;
+  text-align: left;
+}
+
+.text.white.nomargin {
+  margin-bottom: 10px;
+}
+
+.button {
+  margin-right: 25px;
+  padding: 12px 25px;
+  float: none;
+  border-radius: 30px;
+  background-color: #a4eb0e;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #1c75bb;
+}
+
+.lens_img_div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25%;
+  padding-right: 25px;
+  padding-left: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+}
+
+.lens_img_div.middle {
+  border-right: 1px dotted rgba(28, 117, 187, .4);
+  border-left: 1px dotted rgba(28, 117, 187, .4);
+}
+
+.buttons_div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 75px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.lasik_test_div {
+  width: 35%;
+}
+
+.lasik_test_div:hover {
+  color: #a4eb0e;
+}
+
+.lasik_test_btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.lasik_test_btn:hover {
+  color: #a4eb0e;
+}
+
+.test_icon {
+  margin-right: 30px;
+}
+
+.lasik_test_img_div {
+  width: 50%;
+}
+
+.lasik_img_container {
+  position: relative;
+}
+
+.lasik_img {
+  position: absolute;
+  top: 84px;
+}
+
+.blank_div {
+  width: 55%;
+}
+
+.appointment_div {
+  width: 45%;
+  text-align: left;
+}
+
+.text_field {
+  border: 1px solid #a4eb0e;
+  border-radius: 20px;
+}
+
+.submit_btn {
+  width: 30%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background-color: #a4eb0e;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.submit_btn:hover {
+  background-color: #000;
+  color: #a4eb0e;
+}
+
+.success_msg {
+  padding-left: 20px;
+  background-color: transparent;
+  color: #000;
+  font-size: 18px;
+}
+
+.success_msg.white {
+  color: #fff;
+}
+
+.error-msg {
+  background-color: transparent;
+  color: #db0606;
+  font-size: 16px;
+}
+
+.location_div {
+  width: 33.33%;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.location_name {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  color: #a4eb0e;
+  font-weight: 400;
+  text-align: center;
+}
+
+.address_text {
+  height: 80px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.phone_text {
+  margin-bottom: 30px;
+  color: #a4eb0e;
+  font-size: 20px;
+  text-align: center;
+}
+
+.map_div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 300px;
+}
+
+.map {
+  width: 200px;
+  height: 200px;
+  border-radius: 300px;
+}
+
+.results_headline {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.list {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.list.black {
+  width: 100%;
+  color: #333;
+  line-height: 20px;
+}
+
+.lens_img {
+  width: 50%;
+}
+
+.lens_text {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.list-item {
+  line-height: 20px;
+}
+
+.list_item {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.cataract_form_div {
+  width: 75%;
+  text-align: left;
+}
+
+.test_question {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 16px;
+  text-align: left;
+}
+
+.radio-button-field {
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.radio-button-field.last {
+  margin-bottom: 30px;
+}
+
+.test_left_div {
+  width: 50%;
+  padding-right: 10px;
+  float: left;
+}
+
+.test_right_div {
+  width: 50%;
+  padding-left: 10px;
+  float: right;
+}
+
+.test_dubmit_btn {
+  padding: 10px 32px;
+  float: right;
+  border-radius: 40px;
+  background-color: #a4eb0e;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.test_dubmit_btn:hover {
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    background-color: transparent;
+  }
+  .logo {
+    left: 20px;
+    top: -30px;
+    width: 25%;
+  }
+  .hero_section {
+    background-image: url('../images/main-img.jpg');
+    background-position: 13% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav_menu {
+    margin-top: 0px;
+    padding-right: 0px;
+    background-color: #022038;
+  }
+  .main_tagline_div {
+    left: 0px;
+    top: auto;
+    right: 0px;
+    bottom: 0%;
+    width: 100%;
+    padding: 45px 25px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: hsla(0, 0%, 100%, .81);
+    text-align: center;
+  }
+  .main_tagline {
+    margin-bottom: 5px;
+    font-size: 56px;
+    line-height: 38px;
+  }
+  .main_tagline_smaller {
+    margin-top: 15px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .section.bg {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .section.lasik_test {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .container_div {
+    width: 75%;
+  }
+  .container_div.testimonials {
+    width: 85%;
+  }
+  .container_div.flex {
+    width: 85%;
+  }
+  .container_div.test_form {
+    width: 90%;
+  }
+  .lens_img_div {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .lens_img_div.middle {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .lasik_test_div {
+    width: 45%;
+  }
+  .lasik_test_btn {
+    font-size: 20px;
+  }
+  .lasik_img {
+    top: -1px;
+  }
+  .appointment_div {
+    width: 100%;
+  }
+  .submit_btn {
+    width: 45%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .map {
+    width: 150px;
+    height: 150px;
+  }
+  .menu_btn {
+    background-color: #a4eb0e;
+    color: #022038;
+  }
+  .menu_btn:hover {
+    background-color: #1c75bb;
+    color: #fff;
+  }
+  .menu_btn.w--open {
+    background-color: #022038;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    left: 10px;
+    top: -20px;
+    width: 20%;
+    padding-left: 0px;
+  }
+  .logo.bottom {
+    width: 15%;
+    padding-left: 0px;
+  }
+  .hero_section {
+    background-position: 50% 0px;
+  }
+  .main_tagline_div {
+    left: auto;
+    right: 0px;
+    bottom: 8%;
+    width: 55%;
+    padding: 15px 63px 15px 15px;
+    text-align: right;
+  }
+  .main_tagline {
+    font-size: 24px;
+    line-height: 22px;
+  }
+  .main_tagline_smaller {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 12px;
+  }
+  .section.bg {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .section.locations {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .container_div {
+    width: 85%;
+  }
+  .section_headline {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .button {
+    margin-bottom: 10px;
+  }
+  .lens_img_div {
+    width: 30%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 0px;
+  }
+  .lens_img_div.middle {
+    border-style: dotted none;
+    border-top-width: 1px;
+    border-top-color: rgba(28, 117, 187, .4);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(28, 117, 187, .4);
+  }
+  .lasik_test_img_div {
+    display: none;
+  }
+  .location_div {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .location_name {
+    margin-bottom: 15px;
+  }
+  .cataract_form_div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .logo {
+    width: 35%;
+  }
+  .hero_section {
+    background-image: url('../images/main-img.jpg');
+    background-position: 15% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .main_tagline {
+    font-size: 28px;
+    line-height: 18px;
+  }
+  .main_tagline_smaller {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .main_link {
+    line-height: 14px;
+  }
+  .section.lasik {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .section.bg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .container_div.test_form {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .section_headline {
+    margin-bottom: 20px;
+  }
+  .button {
+    margin-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 14px;
+  }
+  .lens_img_div.middle {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .lasik_test_btn {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .test_icon {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .lasik_test_img_div {
+    display: none;
+    width: 80%;
+  }
+  .lasik_img_container {
+    position: relative;
+  }
+  .lasik_img {
+    position: absolute;
+    top: -134px;
+  }
+  .blank_div {
+    display: none;
+  }
+  .appointment_div {
+    width: 100%;
+  }
+  .cataract_form_div {
+    width: 100%;
+  }
+  .test_left_div {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .test_right_div {
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+
