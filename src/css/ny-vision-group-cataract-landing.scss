@@ -15,6 +15,9 @@ body {
   position: fixed;
   width: 100%;
   background-color: rgba(2, 18, 31, .76);
+  @include tablet {
+    background-color: transparent;
+  }
 }
 
 .logo {
@@ -22,15 +25,34 @@ body {
   left: 30px;
   top: -40px;
   width: 15%;
+  @include tablet {
+    left: 20px;
+    top: -30px;
+    width: 25%;
+  }
+  @include large-phone {
+    left: 10px;
+    top: -20px;
+    width: 20%;
+    padding-left: 0px;
+  }
+  @include phone {
+    width: 35%;
+  }
+  &.bottom {
+    position: static;
+    display: inline-block;
+    width: 10%;
+    margin-bottom: 30px;
+    float: none;
+    @include large-phone {
+      width: 15%;
+      padding-left: 0px;
+    }
+  }
 }
 
-.logo.bottom {
-  position: static;
-  display: inline-block;
-  width: 10%;
-  margin-bottom: 30px;
-  float: none;
-}
+
 
 .navlink {
   margin-right: 2px;
@@ -41,31 +63,60 @@ body {
   background-color: transparent;
   color: #fff;
   text-transform: uppercase;
-}
-
-.navlink:hover {
-  border-color: #00ba27;
-  background-color: transparent;
-  color: #17fa47;
-}
-
-.navlink.w--current {
-  color: #a1fab4;
+  text-align: center;
+  &:hover {
+    border-color: #00ba27;
+    background-color: transparent;
+    color: #17fa47;
+  }
+  &.w--current {
+    color: #a1fab4;
+  }
 }
 
 .hero_section {
   height: 100%;
-  background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
-  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img.jpg');
+  background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img-1920.jpg');
+  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img-1920.jpg');
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
+  @include large-screen {
+    background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img-2560.jpg');
+    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff), url('../images/main-img-2560.jpg');
+  }
+  @include tablet {
+    background-image: url('../images/main-img-991.jpg');
+    background-position: 13% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  @include large-phone {
+    background-image: url('../images/main-img-767.jpg');
+    background-position: 50% 0px;
+  }
+  @include phone {
+    background-image: url('../images/main-img-479.jpg');
+    background-position: 15% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .nav_menu {
   margin-top: 20px;
   padding-top: 0px;
   padding-right: 20px;
+  padding-left: 20%;
+  display: flex;
+  align-items: center;
+  @include tablet {
+    display: block;
+    padding-left: 0;
+    margin-top: 0px;
+    padding-right: 0px;
+    background-color: #022038;
+  }
 }
 
 .main_tagline_div {
@@ -77,6 +128,26 @@ body {
   padding: 0px 100px 50px 0px;
   background-color: transparent;
   text-align: right;
+  @include tablet {
+    left: 0px;
+    top: auto;
+    right: 0px;
+    bottom: 0%;
+    width: 100%;
+    padding: 45px 25px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: hsla(0, 0%, 100%, .81);
+    text-align: center;
+  }
+  @include large-phone {
+    left: auto;
+    right: 0px;
+    bottom: 8%;
+    width: 70%;
+    padding: 15px 63px 15px 15px;
+    text-align: right;
+  }
 }
 
 .main_tagline {
@@ -84,9 +155,19 @@ body {
   margin-bottom: 20px;
   padding-left: 0px;
   color: #023055;
-  font-size: 78px;
-  line-height: 78px;
+  font-size: 65px;
+  line-height: 1.125;
   font-weight: 900;
+  @include tablet {
+    margin-bottom: 5px;
+    font-size: 56px;
+  }
+  @include large-phone {
+    font-size: 24px;
+  }
+  @include phone {
+    font-size: 28px;
+  }
 }
 
 .main_tagline_smaller {
@@ -94,67 +175,132 @@ body {
   margin-bottom: 0px;
   color: #056ec0;
   font-size: 30px;
-  line-height: 36px;
+  line-height: 1.125;
   font-style: normal;
   font-weight: 500;
+  @include tablet {
+    margin-top: 15px;
+    font-size: 28px;
+  }
+  @include large-phone {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  @include phone {
+    margin-top: 10px;
+    font-size: 18px;
+  }
 }
 
 .main_link {
   color: #1c75bb;
-  line-height: 34px;
+  line-height: 1.5;
   font-weight: 500;
   text-decoration: underline;
-}
-
-.main_link:hover {
-  color: #00ba27;
+  &:hover {
+    color: #00ba27;
+  }
+  @include phone {
+  }
 }
 
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
-}
+  &.lasik {
+    background-color: #02310c;
+    @include phone {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  &.bg {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-1920.jpg');
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-1920.jpg');
+    background-position: 0px 0px, 50% 100%;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: scroll, fixed;
+    @include large-screen {
+      background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-2560.jpg');
+      background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-2560.jpg');
+    }
+    @include tablet {
+      background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-991.jpg');
+      background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-991.jpg');
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @include large-phone {
+      background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-767.jpg');
+      background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-767.jpg');
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    @include phone {
+      background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-479.jpg');
+      background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg-479.jpg');
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  &.lasik_test {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-1920.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-1920.jpg');
+    background-position: 0px 0px, 50% 100%;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: scroll, fixed;
+    @include large-screen {
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-2560.jpg');
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
+    }
+    @include tablet {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-991.jpg');
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-991.jpg');
+    }
+    @include large-phone {
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-767.jpg');
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-767.jpg');
+    }
+    @include phone {
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-479.jpg');
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg-479.jpg');
+    }
+  }
+  &.locations {
+    background-color: #000;
+    @include large-phone {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+  }
+  &.footer {
+    padding-top: 50px;
+  }
+  &.green {
+    background-color: transparent;
+    background-image: url('../images/lens-bg-1920.jpg');
 
-.section.lasik {
-  background-color: #02310c;
-}
-
-.section.bg {
-  padding-top: 150px;
-  padding-bottom: 150px;
-  background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
-  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .77), hsla(0, 0%, 100%, .77)), url('../images/ny-bg.jpg');
-  background-position: 0px 0px, 50% 100%;
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-attachment: scroll, fixed;
-}
-
-.section.lasik_test {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, .79), rgba(0, 0, 0, .79)), url('../images/ny-bg.jpg');
-  background-position: 0px 0px, 50% 100%;
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-attachment: scroll, fixed;
-}
-
-.section.locations {
-  background-color: #000;
-}
-
-.section.footer {
-  padding-top: 50px;
-}
-
-.section.green {
-  background-color: transparent;
-  background-image: url('../images/lens-bg.jpg');
-  background-position: 50% 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include large-screen {
+      background-image: url('../images/lens-bg-2560.jpg');
+    }
+    @include tablet {
+      background-image: url('../images/lens-bg-991.jpg');
+    }
+    @include phone {
+      background-image: url('../images/lens-bg-479.jpg');
+    }
+  }
 }
 
 .container_div {
@@ -165,43 +311,57 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  @include tablet {
+    width: 75%;
+  }
+  @include large-phone {
+    width: 85%;
+  }
+  &.testimonials {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-radius: 45px;
+    background-color: transparent;
+    @include tablet {
+      width: 85%;
+    }
+  }
+  &.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    @include tablet {
+      width: 85%;
+    }
+  }
 }
 
-.container_div.testimonials {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  border-radius: 45px;
-  background-color: transparent;
-}
 
-.container_div.flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
+
+
 
 .container_div.test_form {
   display: -webkit-box;
@@ -213,6 +373,14 @@ body {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  @include tablet {
+    width: 90%;
+  }
+  @include phone {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 
 .section_headline {
@@ -223,41 +391,43 @@ body {
   border-bottom: 1px solid rgba(164, 235, 14, .42);
   color: #fff;
   font-weight: 300;
+  line-height: 1.125;
   text-align: left;
-}
-
-.section_headline.testimonials {
-  padding-left: 0px;
-  border-bottom-color: rgba(28, 117, 187, .34);
-  color: #000;
-  font-weight: 700;
-}
-
-.section_headline.black {
-  border-bottom-color: rgba(28, 117, 187, .33);
-  color: #000;
-}
-
-.section_headline.center {
-  text-align: center;
+  @include large-phone {
+    font-size: 30px;
+  }
+  @include phone {
+    margin-bottom: 20px;
+  }
+  &.testimonials {
+    padding-left: 0px;
+    border-bottom-color: rgba(28, 117, 187, .34);
+    color: #000;
+    font-weight: 700;
+  }
+  &.black {
+    border-bottom-color: rgba(28, 117, 187, .33);
+    color: #000;
+  }
+  &.center {
+    text-align: center;
+  }
 }
 
 .text {
   margin-bottom: 30px;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.5;
   text-align: left;
-}
-
-.text.white {
-  margin-bottom: 30px;
-  color: #fff;
-  font-weight: 300;
-  text-align: left;
-}
-
-.text.white.nomargin {
-  margin-bottom: 10px;
+  &.white {
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 300;
+    text-align: left;
+    &.nomargin {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .button {
@@ -267,44 +437,82 @@ body {
   border-radius: 30px;
   background-color: #a4eb0e;
   color: #000;
+  line-height: 1.5;
   text-transform: uppercase;
-}
-
-.button:hover {
-  background-color: #fff;
-  color: #1c75bb;
+  &:hover {
+    background-color: #fff;
+    color: #1c75bb;
+  }
+  @include large-phone {
+    margin-bottom: 10px;
+  }
+  @include phone {
+    margin-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }
 
 .lens_img_div {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 25%;
-  padding-right: 25px;
-  padding-left: 25px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: left;
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // width: 25%;
+  // padding-right: 25px;
+  // padding-left: 25px;
+  // -webkit-box-orient: vertical;
+  // -webkit-box-direction: normal;
+  // -webkit-flex-direction: column;
+  // -ms-flex-direction: column;
+  // flex-direction: column;
+  // -webkit-box-pack: center;
+  // -webkit-justify-content: center;
+  // -ms-flex-pack: center;
+  // justify-content: center;
+  // -webkit-flex-wrap: wrap;
+  // -ms-flex-wrap: wrap;
+  // flex-wrap: wrap;
+  // -webkit-box-align: center;
+  // -webkit-align-items: center;
+  // -ms-flex-align: center;
+  // align-items: center;
+  // text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  // @include tablet {
+  //   padding-right: 15px;
+  //   padding-left: 15px;
+  // }
+  // @include large-phone {
+  //   width: 30%;
+  //   margin-top: 15px;
+  //   margin-bottom: 15px;
+  //   padding: 15px 0px;
+  // }
+}
+
+.lens_img {
 }
 
 .lens_img_div.middle {
   border-right: 1px dotted rgba(28, 117, 187, .4);
   border-left: 1px dotted rgba(28, 117, 187, .4);
+  @include tablet {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  @include large-phone {
+    border-style: dotted none;
+    border-top-width: 1px;
+    border-top-color: rgba(28, 117, 187, .4);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(28, 117, 187, .4);
+  }
+  @include phone {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 
 .buttons_div {
@@ -329,10 +537,12 @@ body {
 
 .lasik_test_div {
   width: 35%;
-}
-
-.lasik_test_div:hover {
-  color: #a4eb0e;
+  @include tablet {
+    width: 45%;
+  }
+  &:hover {
+    color: #a4eb0e;
+  }
 }
 
 .lasik_test_btn {
@@ -352,10 +562,18 @@ body {
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.lasik_test_btn:hover {
-  color: #a4eb0e;
+  @include tablet {
+    font-size: 20px;
+  }
+  @include phone {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  &:hover {
+    color: #a4eb0e;
+  }
 }
 
 .test_icon {
@@ -364,24 +582,49 @@ body {
 
 .lasik_test_img_div {
   width: 50%;
+  @include large-phone {
+    display: none;
+  }
+  @include phone {
+    display: none;
+    width: 80%;
+  }
 }
 
 .lasik_img_container {
   position: relative;
+  @include phone {
+    position: relative;
+  }
 }
 
 .lasik_img {
   position: absolute;
   top: 84px;
+  @include tablet {
+    top: -1px;
+  }
+  @include phone {
+    top: -134px;
+  }
 }
 
 .blank_div {
   width: 55%;
+  @include phone {
+    display: none;
+  }
 }
 
 .appointment_div {
   width: 45%;
   text-align: left;
+  @include tablet {
+    width: 100%;
+  }
+  @include phone {
+    width: 100%;
+  }
 }
 
 .text_field {
@@ -396,11 +639,15 @@ body {
   background-color: #a4eb0e;
   color: #000;
   text-transform: uppercase;
-}
-
-.submit_btn:hover {
-  background-color: #000;
-  color: #a4eb0e;
+  @include tablet {
+    width: 45%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  &:hover {
+    background-color: #000;
+    color: #a4eb0e;
+  }
 }
 
 .success_msg {
@@ -408,10 +655,9 @@ body {
   background-color: transparent;
   color: #000;
   font-size: 18px;
-}
-
-.success_msg.white {
-  color: #fff;
+  &.white {
+    color: #fff;
+  }
 }
 
 .error-msg {
@@ -425,6 +671,13 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
+  @include large-phone {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 
 .location_name {
@@ -433,6 +686,9 @@ body {
   color: #a4eb0e;
   font-weight: 400;
   text-align: center;
+  @include large-phone {
+    margin-bottom: 15px;
+  }
 }
 
 .address_text {
@@ -440,7 +696,7 @@ body {
   margin-bottom: 15px;
   color: #fff;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 1.5;
   font-weight: 300;
   text-align: center;
 }
@@ -468,13 +724,15 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  border-radius: 300px;
 }
 
 .map {
   width: 200px;
   height: 200px;
-  border-radius: 300px;
+  @include tablet {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .results_headline {
@@ -482,7 +740,7 @@ body {
   margin-top: 0px;
   margin-bottom: 30px;
   font-size: 28px;
-  line-height: 30px;
+  line-height: 1.125;
   font-weight: 500;
 }
 
@@ -491,19 +749,18 @@ body {
   padding-left: 20px;
   color: #fff;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.5;
   font-weight: 300;
   text-align: left;
-}
-
-.list.black {
-  width: 100%;
-  color: #333;
-  line-height: 20px;
+  &.black {
+    width: 100%;
+    color: #333;
+  }
 }
 
 .lens_img {
   width: 50%;
+  max-width: 300px;
 }
 
 .lens_text {
@@ -514,7 +771,7 @@ body {
 }
 
 .list-item {
-  line-height: 20px;
+  line-height: 1.5;
 }
 
 .list_item {
@@ -525,6 +782,9 @@ body {
 .cataract_form_div {
   width: 75%;
   text-align: left;
+  @include large-phone {
+    width: 100%;
+  }
 }
 
 .test_question {
@@ -538,22 +798,29 @@ body {
 .radio-button-field {
   margin-bottom: 5px;
   color: #fff;
-}
-
-.radio-button-field.last {
-  margin-bottom: 30px;
+  &.last {
+    margin-bottom: 30px;
+  }
 }
 
 .test_left_div {
   width: 50%;
   padding-right: 10px;
   float: left;
+  @include phone {
+    width: 100%;
+    padding-right: 0px;
+  }
 }
 
 .test_right_div {
   width: 50%;
   padding-left: 10px;
   float: right;
+  @include phone {
+    width: 100%;
+    padding-left: 0px;
+  }
 }
 
 .test_dubmit_btn {
@@ -564,280 +831,38 @@ body {
   color: #000;
   font-weight: 400;
   text-transform: uppercase;
+  &:hover {
+    background-color: #fff;
+  }
 }
 
-.test_dubmit_btn:hover {
-  background-color: #fff;
-}
-
-@media (max-width: 991px) {
-  @include tablet {
-    background-color: transparent;
-  }
-  .logo {
-    left: 20px;
-    top: -30px;
-    width: 25%;
-  }
-  .hero_section {
-    background-image: url('../images/main-img.jpg');
-    background-position: 13% 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .nav_menu {
-    margin-top: 0px;
-    padding-right: 0px;
-    background-color: #022038;
-  }
-  .main_tagline_div {
-    left: 0px;
-    top: auto;
-    right: 0px;
-    bottom: 0%;
-    width: 100%;
-    padding: 45px 25px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    background-color: hsla(0, 0%, 100%, .81);
-    text-align: center;
-  }
-  .main_tagline {
-    margin-bottom: 5px;
-    font-size: 56px;
-    line-height: 38px;
-  }
-  .main_tagline_smaller {
-    margin-top: 15px;
-    font-size: 28px;
-    line-height: 32px;
-  }
-  .section.bg {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  .section.lasik_test {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .container_div {
-    width: 75%;
-  }
-  .container_div.testimonials {
-    width: 85%;
-  }
-  .container_div.flex {
-    width: 85%;
-  }
-  .container_div.test_form {
-    width: 90%;
-  }
-  .lens_img_div {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .lens_img_div.middle {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .lasik_test_div {
-    width: 45%;
-  }
-  .lasik_test_btn {
-    font-size: 20px;
-  }
-  .lasik_img {
-    top: -1px;
-  }
-  .appointment_div {
-    width: 100%;
-  }
-  .submit_btn {
-    width: 45%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  .map {
-    width: 150px;
-    height: 150px;
-  }
-  .menu_btn {
-    background-color: #a4eb0e;
-    color: #022038;
-  }
-  .menu_btn:hover {
+.menu_btn {
+  background-color: #a4eb0e;
+  color: #022038;
+  &:hover {
     background-color: #1c75bb;
     color: #fff;
   }
-  .menu_btn.w--open {
+  &.w--open {
     background-color: #022038;
   }
 }
 
-@media (max-width: 767px) {
-  .logo {
-    left: 10px;
-    top: -20px;
-    width: 20%;
-    padding-left: 0px;
-  }
-  .logo.bottom {
-    width: 15%;
-    padding-left: 0px;
-  }
-  .hero_section {
-    background-position: 50% 0px;
-  }
-  .main_tagline_div {
-    left: auto;
-    right: 0px;
-    bottom: 8%;
-    width: 55%;
-    padding: 15px 63px 15px 15px;
-    text-align: right;
-  }
-  .main_tagline {
-    font-size: 24px;
-    line-height: 22px;
-  }
-  .main_tagline_smaller {
-    margin-top: 5px;
-    font-size: 14px;
-    line-height: 12px;
-  }
-  .section.bg {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-  .section.locations {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-  .container_div {
-    width: 85%;
-  }
-  .section_headline {
-    font-size: 30px;
-    line-height: 34px;
-  }
-  .button {
-    margin-bottom: 10px;
-  }
-  .lens_img_div {
-    width: 30%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 15px 0px;
-  }
-  .lens_img_div.middle {
-    border-style: dotted none;
-    border-top-width: 1px;
-    border-top-color: rgba(28, 117, 187, .4);
-    border-bottom-width: 1px;
-    border-bottom-color: rgba(28, 117, 187, .4);
-  }
-  .lasik_test_img_div {
-    display: none;
-  }
-  .location_div {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .location_name {
-    margin-bottom: 15px;
-  }
-  .cataract_form_div {
-    width: 100%;
-  }
+.src--loading {
+  opacity: 0;
+  background-image: none !important;
 }
-
-@media (max-width: 479px) {
-  .logo {
-    width: 35%;
+.src--loaded {
+  animation-name: imageTransition;
+  animation-delay: 0s;
+  animation-duration: 175ms;
+  animation-iteration-count: 1;
+}
+@keyframes imageTransition {
+  from {
+    opacity: 0;
   }
-  .hero_section {
-    background-image: url('../images/main-img.jpg');
-    background-position: 15% 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .main_tagline {
-    font-size: 28px;
-    line-height: 18px;
-  }
-  .main_tagline_smaller {
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 18px;
-  }
-  .main_link {
-    line-height: 14px;
-  }
-  .section.lasik {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .section.bg {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .container_div.test_form {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  .section_headline {
-    margin-bottom: 20px;
-  }
-  .button {
-    margin-right: 0px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    line-height: 14px;
-  }
-  .lens_img_div.middle {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .lasik_test_btn {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .test_icon {
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-  .lasik_test_img_div {
-    display: none;
-    width: 80%;
-  }
-  .lasik_img_container {
-    position: relative;
-  }
-  .lasik_img {
-    position: absolute;
-    top: -134px;
-  }
-  .blank_div {
-    display: none;
-  }
-  .appointment_div {
-    width: 100%;
-  }
-  .cataract_form_div {
-    width: 100%;
-  }
-  .test_left_div {
-    width: 100%;
-    padding-right: 0px;
-  }
-  .test_right_div {
-    width: 100%;
-    padding-left: 0px;
+  to {
+    opacity: 1;
   }
 }
